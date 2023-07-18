@@ -9,6 +9,14 @@ class Solution
      */
     public function longestCommonPrefix($strs)
     {
+        if (count($strs) === 0) {
+            return '';
+        }
+
+        if (count($strs) === 1) {
+            return $strs[0];
+        }
+
         $ret           = "";
         $smallestStr   = $this->getSmallestStr($strs);
         $smallestArray = str_split($smallestStr);
