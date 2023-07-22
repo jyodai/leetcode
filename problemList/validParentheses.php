@@ -13,8 +13,12 @@ class Solution
     {
         $closeingList = [];
         $string       =  preg_replace($this->parenthesesPattern, "", $s);
-        $stringArray  = str_split($string);
-        $count        = count($stringArray);
+        if (strlen($string) % 2 !== 0) {
+            return false;
+        }
+
+        $stringArray = str_split($string);
+        $count       = count($stringArray);
 
         for ($i = 0; $i < $count; $i++) {
             $target = $stringArray[$i];
