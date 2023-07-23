@@ -21,6 +21,13 @@ class Solution
      */
     public function mergeTwoLists($list1, $list2)
     {
+        if ($list1->val === null) {
+            return $list2;
+        }
+        if ($list2->val === null) {
+            return $list1;
+        }
+
         $array1 = $this->convertArray($list1);
         $array2 = $this->convertArray($list2);
 
