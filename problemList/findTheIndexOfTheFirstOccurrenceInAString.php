@@ -1,13 +1,15 @@
 <?php
 
-class Solution {
+class Solution
+{
 
     /**
      * @param String $haystack
      * @param String $needle
      * @return Integer
      */
-    function strStr($haystack, $needle) {
+    public function strStr($haystack, $needle)
+    {
         $ret = strpos($haystack, $needle);
         return $ret === false ? -1 : $ret;
     }
