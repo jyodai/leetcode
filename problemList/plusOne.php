@@ -7,8 +7,15 @@ class Solution
      * @param Integer[] $digits
      * @return Integer[]
      */
-    public function plusOne($digits)
+    public function plusOne(array $digits)
     {
+        if (end($digits) < 9) {
+            $lastIndex          = count($digits) - 1;
+            $lastValue          = (int) $digits[$lastIndex];
+            $digits[$lastIndex] = $lastValue + 1;
+            return $digits;
+        }
+
         $ret     = [];
         $reverse = array_reverse($digits);
         $reverse[0]++;
